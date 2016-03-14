@@ -2,7 +2,6 @@ require 'rails/generators/named_base'
 require 'generators/conveyuser/orm_helpers'
 
 module Mongoid
-  module Generators
     class SetupGenerator < Rails::Generators::NamedBase
       include Devise::Generators::OrmHelpers
 
@@ -26,5 +25,4 @@ module Mongoid
 RUBY
       end
     end
-  end
 end

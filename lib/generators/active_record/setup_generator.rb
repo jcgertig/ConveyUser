@@ -2,7 +2,6 @@ require 'rails/generators/active_record'
 require 'generators/conveyuser/orm_helpers'
 
 module ActiveRecord
-  module Generators
     class SetupGenerator < ActiveRecord::Generators::Base
       argument :attributes, type: :array, default: [], banner: "field:type field:type"
 
@@ -62,5 +61,4 @@ RUBY
         config && config['adapter'] == 'postgresql'
       end
     end
-  end
 end

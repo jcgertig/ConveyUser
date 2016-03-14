@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ConveyUser/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "convey-user"
+  spec.name          = "convey_user"
   spec.version       = ConveyUser::VERSION
   spec.authors       = ["Jonathan Gertig"]
   spec.email         = ["jcgertig@gmail.com"]

@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'convey-user'
+gem 'convey_user'
 ```
 
 And then execute:
@@ -18,11 +18,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install ConveyUser
+    $ gem install convey_user
 
 ## Usage
 
-`rails g convey-user:install`
+`rails g convey_user:setup`
 
 ## Development
 

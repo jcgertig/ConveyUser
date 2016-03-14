@@ -2,7 +2,6 @@ require 'rails/generators/base'
 require 'securerandom'
 
 module ConveyUser
-  module Generators
     MissingORMError = Class.new(Thor::Error)
 
     class SetupGenerator < Rails::Generators::Base
@@ -22,5 +21,4 @@ module ConveyUser
         Rails::VERSION::MAJOR == 4
       end
     end
-  end
 end
