@@ -1,5 +1,5 @@
 require 'rails/generators/named_base'
-require 'generators/devise/orm_helpers'
+require 'generators/conveyuser/orm_helpers'
 
 module Mongoid
   module Generators
