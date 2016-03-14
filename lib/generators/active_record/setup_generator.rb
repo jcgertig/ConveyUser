@@ -10,9 +10,9 @@ module ActiveRecord
 
       def copy_conveyuser_migration
         if (behavior == :invoke && model_exists?) || (behavior == :revoke && migration_exists?([name]))
-          migration_template "migration_existing.rb", "db/migrate/add_convey_to_user.rb"
+          migration_template "migration_existing.rb", "db/migrate/add_convey_to_users.rb"
         else
-          migration_template "migration.rb", "db/migrate/convey_create_user.rb"
+          migration_template "migration.rb", "db/migrate/convey_create_users.rb"
         end
       end
 

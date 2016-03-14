@@ -1,4 +1,4 @@
-class DeviseCreateUsers < ActiveRecord::Migration
+class ConveyCreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
 <%= migration_data -%>
