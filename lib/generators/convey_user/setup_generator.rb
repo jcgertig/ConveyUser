@@ -1,5 +1,4 @@
 require 'rails/generators/base'
-require 'securerandom'
 
 module ConveyUser
     MissingORMError = Class.new(Thor::Error)

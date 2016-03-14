@@ -1,5 +1,5 @@
 require 'rails/generators/active_record'
-require 'generators/conveyuser/orm_helpers'
+require 'generators/convey_user/orm_helpers'
 
 module ActiveRecord
     class SetupGenerator < ActiveRecord::Generators::Base
