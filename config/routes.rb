@@ -1,4 +1,4 @@
-ConveyUser::Engine.routes.draw do
+Rails.application.routes.draw do
   get '/login', to: 'ConveyUser/sessions#new'
   get '/auth/:provider/callback', to: 'ConveyUser/sessions#create'
 
