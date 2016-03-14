@@ -8,7 +8,9 @@ module ConveyUser
 
       desc "Creates a Convey initializer and copy locale files to your application."
 
-      hook_for :orm
+      hook_for :orm do |instance, controller|
+        instance.invoke controller, [ "User" ]
+      end
 
       class_option :routes, desc: "Generate routes", type: :boolean, default: true
 

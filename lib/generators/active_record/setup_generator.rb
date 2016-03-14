@@ -9,18 +9,18 @@ module ActiveRecord
       source_root File.expand_path("../templates", __FILE__)
 
       def copy_conveyuser_migration
-        if (behavior == :invoke && model_exists?) || (behavior == :revoke && migration_exists?('user'))
+        if (behavior == :invoke && model_exists?) || (behavior == :revoke && migration_exists?([name]))
           migration_template "migration_existing.rb", "db/migrate/add_convey_to_user.rb"
         else
-          migration_template "migration.rb", "db/migrate/devise_create_user.rb"
+          migration_template "migration.rb", "db/migrate/convey_create_user.rb"
         end
       end
 
       def generate_model
-        invoke "active_record:model", 'user', migration: false unless model_exists? && behavior == :invoke
+        invoke "active_record:model", [name], migration: false unless model_exists? && behavior == :invoke
       end
 
-      def inject_devise_content
+      def inject_convey_content
         content = model_contents
 
         class_path = if namespaced?
