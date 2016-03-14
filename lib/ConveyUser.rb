@@ -1,5 +1,7 @@
+require 'rails'
 require "ConveyUser/version"
+require "ConveyUser/token"
 
 module ConveyUser
-  # Your code goes here...
+
 end
