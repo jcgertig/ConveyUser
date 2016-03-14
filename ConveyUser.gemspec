@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "omniauth", "~> 1.3.1"
-  spec.add_dependency "omniauth-convey", github: "jcgertig/omniauth-convey"
+  # spec.add_dependency "omniauth-convey", github: "jcgertig/omniauth-convey"
   spec.add_dependency "jwt", "~> 1.5.1"
   spec.add_dependency "orm_adapter", "~> 0.1"
 
