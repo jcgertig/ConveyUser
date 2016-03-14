@@ -17,7 +17,7 @@ module ActiveRecord
       end
 
       def generate_model
-        invoke "active_record:model", [name], migration: false unless model_exists? && behavior == :invoke
+        invoke "active_record:model", 'user', migration: false unless model_exists? && behavior == :invoke
       end
 
       def inject_devise_content
