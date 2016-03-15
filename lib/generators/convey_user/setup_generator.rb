@@ -13,7 +13,7 @@ module ConveyUser
       end
 
       def mount_routes
-        route "mount ConveyUser::Engine => "/""
+        route 'mount ConveyUser::Engine => "/"'
       end
 
       def copy_initializer
