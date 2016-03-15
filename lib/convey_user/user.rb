@@ -37,7 +37,7 @@ module ConveyUser
     end
 
     def find_or_create_by(auth_hash)
-      User.where(uid: self.uid).first_or_create(self.info)
+      ::User.where(uid: self.uid).first_or_create(self.info)
     end
 
   end
