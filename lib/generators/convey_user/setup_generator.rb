@@ -14,7 +14,7 @@ module ConveyUser
 
       def copy_initializer
         template "convey.rb", "config/initializers/convey.rb"
-        # route "mount ConveyUser::Engine => '/'"
+        route "mount ConveyUser::Engine => '/'"
       end
 
       def rails_4?
