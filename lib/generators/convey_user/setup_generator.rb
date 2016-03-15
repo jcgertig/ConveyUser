@@ -12,12 +12,9 @@ module ConveyUser
         instance.invoke controller, [ "User" ]
       end
 
-      def mount_routes
-        route 'mount ConveyUser::Engine => "/"'
-      end
-
       def copy_initializer
         template "convey.rb", "config/initializers/convey.rb"
+        route "mount ConveyUser::Engine => '/'"
       end
 
       def rails_4?
