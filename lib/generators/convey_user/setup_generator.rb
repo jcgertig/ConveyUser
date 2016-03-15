@@ -12,7 +12,9 @@ module ConveyUser
         instance.invoke controller, [ "User" ]
       end
 
-      class_option :routes, desc: "Generate routes", type: :boolean, default: true
+      def mount_routes
+        route "mount ConveyUser::Engine => "/""
+      end
 
       def copy_initializer
         template "convey.rb", "config/initializers/convey.rb"
