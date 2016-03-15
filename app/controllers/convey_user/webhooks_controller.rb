@@ -5,8 +5,8 @@ module ConveyUser
     def catch
       action = request.headers["X-Convey-Action"] if request.headers["X-Convey-Action"]
       resource = request.headers["X-Convey-Resource"] if request.headers["X-Convey-Resource"]
-      puts params.to_json
-      send("#{action}_#{resource}", params.to_h)
+      puts params.to_json.to_h
+      send("#{action}_#{resource}", params.to_json.to_h)
     end
 
     private
