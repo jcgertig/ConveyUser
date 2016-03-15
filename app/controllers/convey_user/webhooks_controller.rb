@@ -30,6 +30,7 @@ module ConveyUser
       end
 
       def update_user(params)
+        puts params
         user = params[:user]
         uid  = user[:_id]
         user.delete(:_id)
