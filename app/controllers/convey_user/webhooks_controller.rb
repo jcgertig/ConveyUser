@@ -1,5 +1,7 @@
 module ConveyUser
   class WebhooksController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
     def catch
       action = request.headers["X-Convey-Action"] if request.headers["X-Convey-Action"]
       resource = request.headers["X-Convey-Resource"] if request.headers["X-Convey-Resource"]
