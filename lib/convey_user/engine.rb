@@ -1,5 +1,5 @@
 module ConveyUser
-  class Engine < Rails::Engine;
-    isolate_namespace ConverUser
+  class Engine < Rails::Engine
+    isolate_namespace ConveyUser
   end
 end
