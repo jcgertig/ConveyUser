@@ -1,6 +1,6 @@
-Rails.application.routes.draw do
-  get '/login', to: 'ConveyUser/sessions#new'
-  get '/auth/:provider/callback', to: 'ConveyUser/sessions#create'
+ConveyUser::Engine.routes.draw do
+  get '/login', to: 'sessions#new'
+  get '/auth/:provider/callback', to: 'sessions#create'
 
-  post '/webhooks/convey', to: 'ConveyUser/webhooks#catch'
+  post '/webhooks/convey', to: 'webhooks#catch'
 end

@@ -30,7 +30,7 @@ class WebhooksController < ApplicationController
       user = params[:user]
       uid  = user[:_id]
       user.delete(:_id)
-      User.where(uid: uid).first.update(user)
+      User.where(uid: uid).first_or_create(user).update(user)
     end
 
     def create_user(params)
