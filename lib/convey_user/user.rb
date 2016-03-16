@@ -7,10 +7,10 @@ module ConveyUser
       @user = find_or_create_by(auth_hash)
       @token = ConveyUser::Token.from_data({ pure_data: @pure_data, user_id: @user.id }, false)
 
-      @user.public_methods(false).each do |meth|
+      @user.public_methods(false).reject{|x| self.public_methods(false).include? x }.each do |meth|
         (class << self; self; end).class_eval do
           define_method meth do |*args|
-            subject.send meth, *args
+            @user.send meth, *args
           end
         end
       end
@@ -18,7 +18,7 @@ module ConveyUser
       @user.attributes.keys.each do |meth|
         (class << self; self; end).class_eval do
           define_method meth do |*args|
-            subject.send meth, *args
+            @user.send meth, *args
           end
         end
       end
