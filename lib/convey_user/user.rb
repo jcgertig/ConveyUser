@@ -14,6 +14,14 @@ module ConveyUser
           end
         end
       end
+
+      @user.attributes.keys.each do |meth|
+        (class << self; self; end).class_eval do
+          define_method meth do |*args|
+            subject.send meth, *args
+          end
+        end
+      end
     end
 
     def self.from_token(token)
