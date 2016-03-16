@@ -6,6 +6,14 @@ module ConveyUser
       @pure_data = auth_hash
       @user = find_or_create_by(auth_hash)
       @token = ConveyUser::Token.from_data({ pure_data: @pure_data, user_id: @user.id }, false)
+
+      @user.public_methods(false).each do |meth|
+        (class << self; self; end).class_eval do
+          define_method meth do |*args|
+            subject.send meth, *args
+          end
+        end
+      end
     end
 
     def self.from_token(token)
@@ -39,11 +47,6 @@ module ConveyUser
 
     def find_or_create_by(auth_hash)
       ::User.where(uid: self.uid).first_or_create(self.info)
-    end
-
-    def self.method_missing(sym, *args, &block)
-      # the first argument is a Symbol, so you need to_s it if you want to pattern match
-      @user.send sym, *args, &block
     end
 
   end
