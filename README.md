@@ -1,30 +1,34 @@
 # ConveyUser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ConveyUser`. To experiment with that code, run `bin/console` for an interactive prompt.
+Gem to make working with Convey a lot easier
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
 ```ruby
-gem 'convey_user'
+gem 'convey_user', github: 'jcgertig/ConveyUser'
+gem 'omniauth-convey'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+And run the setup:
 
-    $ gem install convey_user
+    $ rails g convey_user:setup
 
-## Usage
+Then handle the get of `auth/success` for example:
 
-`rails g convey_user:setup`
+```ruby
+get 'auth/success', to: 'auth#success'
+```
 
 ## Development
+
+In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/convey_user`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 

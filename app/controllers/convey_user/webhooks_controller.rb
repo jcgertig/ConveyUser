@@ -5,7 +5,6 @@ module ConveyUser
     def catch
       action = request.headers["X-Convey-Action"] if request.headers["X-Convey-Action"]
       resource = request.headers["X-Convey-Resource"] if request.headers["X-Convey-Resource"]
-      puts JSON.parse(params.to_json)
       send("#{action}_#{resource}", JSON.parse(params.to_json))
     end
 
@@ -31,11 +30,9 @@ module ConveyUser
       end
 
       def update_user(params)
-        puts params
         user = params['user']
         uid  = user['id']
-        user.delete('_id')
-        puts user
+        user.delete('id')
         ::User.where(uid: uid).first_or_create(user).update(user)
       end
 

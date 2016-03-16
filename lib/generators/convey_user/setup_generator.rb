@@ -15,6 +15,7 @@ module ConveyUser
       def copy_initializer
         template "convey.rb", "config/initializers/convey.rb"
         route "mount ConveyUser::Engine => '/'"
+        route "#TODO handle get 'auth/success'"
       end
 
       def rails_4?
