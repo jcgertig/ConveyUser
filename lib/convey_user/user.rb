@@ -17,10 +17,6 @@ module ConveyUser
       new(user_token.data[:pure_data])
     end
 
-    def id
-      @user.id
-    end
-
     def uid
       @pure_data["uid"] || @pure_data.uid
     end
