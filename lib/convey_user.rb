@@ -1,4 +1,5 @@
 require "rails"
+require "convey_user/require_proof"
 require "convey_user/version"
 require "convey_user/engine"
 require "convey_user/token"

@@ -1,10 +1,11 @@
 module ConveyUser
   class User
+    attr_reader :user
 
     def initialize(auth_hash)
       @pure_data = auth_hash
       @user = find_or_create_by(auth_hash)
-      @token = ConveyUser::Token.from_data({ pure_data: auth_hash, user_id: @user.id }, false)
+      @token = ConveyUser::Token.from_data({ pure_data: @pure_data, user_id: @user.id }, false)
     end
 
     def self.from_token(token)
@@ -38,6 +39,11 @@ module ConveyUser
 
     def find_or_create_by(auth_hash)
       ::User.where(uid: self.uid).first_or_create(self.info)
+    end
+
+    def self.method_missing(sym, *args, &block)
+      # the first argument is a Symbol, so you need to_s it if you want to pattern match
+      @user.send sym, *args, &block
     end
 
   end

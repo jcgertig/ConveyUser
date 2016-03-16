@@ -26,6 +26,18 @@ Then handle the get of `auth/success` for example:
 get 'auth/success', to: 'auth#success'
 ```
 
+## Current User and proof
+
+Inside your controllers you can require that a jwt token is passed this will set the `current_user` for you
+
+```ruby
+before_action :require_proof
+
+def profile
+  render json: current_user.profile, status: 200
+end
+```
+
 ## Development
 
 In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/convey_user`. To experiment with that code, run `bin/console` for an interactive prompt.
