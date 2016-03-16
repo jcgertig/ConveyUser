@@ -6,5 +6,5 @@ require "convey_user/token"
 require "convey_user/user"
 
 module ConveyUser
-
+  ActionController::Base.send :include, ConveyUser::RequireProof
 end
