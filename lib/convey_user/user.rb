@@ -25,6 +25,10 @@ module ConveyUser
       @pure_data["info"] || @pure_data.info
     end
 
+    def extra
+      @pure_data["extra"] || @pure_data.extra
+    end
+
     def token
       @token.token
     end
