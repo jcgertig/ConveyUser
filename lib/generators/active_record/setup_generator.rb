@@ -37,9 +37,30 @@ module ActiveRecord
 
       def migration_data
 <<RUBY
-      t.boolean :active,  null: false, default: true
-      t.string  :email,   null: false, default: ""
-      t.integer :uid,     null: false
+      t.boolean :active,            null: false, default: true
+      t.string  :email,             null: false, default: ""
+      t.integer :uid,               null: false
+      t.string :first_name,         null: false, default: ''
+      t.string :last_name,          null: false, default: ''
+      t.integer :gender,            null: false, default: 0
+      t.datetime :birthday
+      t.string :email_work,         default: ''
+      t.string :email_personal,     default: ''
+      t.string :phone_personal,     default: ''
+      t.string :phone_work,         default: ''
+      t.string :address_line_one,   default: ''
+      t.string :address_line_two,   default: ''
+      t.string :address_city,       default: ''
+      t.string :address_state,      default: ''
+      t.string :address_zipcode,    default: ''
+      t.integer :employment_status, null: false, default: 0
+      t.datetime :hire_date
+      t.integer :pay_type,          null: false, default: 0
+      t.string :pay_rate,           default: ''
+      t.string :job_title,          default: ''
+      t.integer :reports_to
+      t.string :department,         default: ''
+      t.string :location,           default: ''
 RUBY
       end
 

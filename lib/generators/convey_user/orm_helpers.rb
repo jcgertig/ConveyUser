@@ -3,7 +3,9 @@ module ConveyUser
     module OrmHelpers
       def model_contents
         buffer = <<-CONTENT
-
+  enum gender: [ :male, :female ]
+  enum employment_status: [ :full_time, :part_time, :intern, :contractor ]
+  enum pay_type: [ :salary, :hourly, :daily, :weekly, :monthly, :commission, :contract ]
 CONTENT
         buffer
       end
